@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Desafio 3</title>
+</head>
+
+<body>
+  <button id="send">Ler números</button>
+  <script>
+    // A mensagem "Aprovado", se a média alcançada for maior ou igual a sete;
+    // A mensagem "Reprovado", se a média for menor do que sete;
+    // A mensagem "Aprovado com Distinção", se a média for igual a dez.
+    const button = document.querySelector('#send')
+
+    button.addEventListener('click', () => {
+      const numero1 = parseFloat(prompt('Número 1: '))
+      const numero2 = parseFloat(prompt('Número 2: '))
+      const numero3 = parseFloat(prompt('Número 3: '))
+
+      let menor = numero1
+      let maior = numero1
+
+      if (numero2 < menor) menor = numero2
+      if (numero3 < menor) menor = numero3
+
+      if (numero2 > maior) maior = numero2
+      if (numero3 > maior) maior = numero3
+
+      alert(`Maior número é ${maior} e o menor número é ${menor}`)
+    })
+  </script>
+</body>
+
+</html>
