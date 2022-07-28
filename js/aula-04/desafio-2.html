@@ -1,36 +1,103 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Desafio 2</title>
-</head>
-
-<body>
-  <button id="send">Ler notas</button>
-  <script>
-    // A mensagem "Aprovado", se a média alcançada for maior ou igual a sete;
-    // A mensagem "Reprovado", se a média for menor do que sete;
-    // A mensagem "Aprovado com Distinção", se a média for igual a dez.
-    const button = document.querySelector('#send')
-
-    button.addEventListener('click', () => {
-      const nota1 = parseFloat(prompt('Nota 1: '))
-      const nota2 = parseFloat(prompt('Nota 2: '))
-
-      const media = (nota1 + nota2) / 2
-
-      if (media === 10.0) {
-        alert(`Aluno aprovado com distinção com média 10! Parabéns!`)
-      } else if (media >= 7.0) {
-        alert(`Aluno aprovado com nota: ${media}`)
-      } else if (media < 7.0) {
-        alert(`Aluno reprovado com nota: ${media}`)
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Desafio 2</title>
+    <style>
+      * {
+        font-family: "Roboto", sans-serif;
       }
-    })
-  </script>
-</body>
+      form {
+        margin: 0 auto;
+        width: 25%;
+        gap: 8px;
+        display: flex;
+        flex-direction: column;
+      }
 
+      input,
+      select,
+      button {
+        border: 1px solid purple;
+        border-radius: 4px;
+        height: 32px;
+        background-color: white;
+      }
+
+      label {
+        margin-top: 8px;
+      }
+
+      button:hover {
+        background-color: purple;
+        color: white;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <form>
+      <h1>Me fale sobre você...</h1>
+      <label>Nome</label>
+      <input
+        name="name"
+        id="name"
+        type="text"
+        placeholder="Digite seu nome..."
+      />
+      <label>Gênero</label>
+      <select name="gender" id="gender">
+        <option value="Masculino" selected>Masculino</option>
+        <option value="Feminino">Feminino</option>
+        <option value="Outros">Outros</option>
+      </select>
+      <label>Estado civil</label>
+      <select name="marital-status" id="marital-status">
+        <option value="Casado" selected>Casado</option>
+        <option value="Solteiro">Solteiro</option>
+        <option value="Divorciado">Divorciado</option>
+        <option value="Separado">Separado</option>
+      </select>
+      <label>Faixa etária</label>
+      <select name="age-groups" id="age-groups">
+        <option value="0-10 anos" selected>0-10 anos</option>
+        <option value="11-25 anos">11-25 anos</option>
+        <option value="26-35 anos">26-35 anos</option>
+        <option value="36-55 anos">36-55 anos</option>
+        <option value="56 anos em diante">56 anos em diante</option>
+      </select>
+      <label>Hobby</label>
+      <select name="hobbies" id="hobbies">
+        <option value="Ler livros" selected>Ler livros</option>
+        <option value="Jogar jogos de video-game">
+          Jogar jogos de video-game
+        </option>
+        <option value="Ouvir música">Ouvir música</option>
+        <option value="Ir ao cinema">Ir ao cinema</option>
+        <option value="Praticar esportes">Praticar esportes</option>
+      </select>
+      <button type="submit" id="send">ENVIAR</button>
+    </form>
+    <script>
+      const form = document.querySelector("form");
+      const user = {};
+
+      form.addEventListener("submit", (event) => {
+        event.preventDefault();
+        const formData = new FormData(form);
+        for (let data of formData) {
+          const [key, value] = data;
+          user[key] = value;
+        }
+        showMessage(user);
+      });
+
+      function showMessage(user = {}) {
+        let message = `${user["name"]} está ${user["marital-status"]}. É do gênero ${user["gender"]}, está na faixa etária dos ${user["age-groups"]} e gosta de ${user["hobbies"]}. Bem-vindo!`;
+        alert(message);
+      }
+    </script>
+  </body>
 </html>
