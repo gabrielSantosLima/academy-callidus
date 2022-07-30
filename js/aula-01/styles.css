@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+*{
+    font-family: 'Roboto', sans-serif;
+}
+
+:root{
+    --primary: #103200;
+    --secundary: #c5d73b;
+    --neutral: #375135;
+    --primary-text-color: #FFFFFF;
+    --secundary-text-color: #000000;
+    --default-background: #FFFFFF;
+    --default-text-color: var(--primary);
+}
+
+html, body, .root{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    background-color: var(--default-background);
+    color: var(--default-text-color);
+}
+
+*, textarea, input{
+    color: inherit;
+    user-select: none;
+}
+
+.primary-mark{
+    background-color: var(--primary);
+    color: var(--primary-text-color);
+}
+.secundary-mark{
+    background-color: var(--secundary);
+    color: var(--secundary-text-color);
+}

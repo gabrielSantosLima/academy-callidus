@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Desafio 2</title>
+</head>
+
+<body>
+  <button id="send">Ler notas</button>
+  <script>
+    // A mensagem "Aprovado", se a média alcançada for maior ou igual a sete;
+    // A mensagem "Reprovado", se a média for menor do que sete;
+    // A mensagem "Aprovado com Distinção", se a média for igual a dez.
+    const button = document.querySelector('#send')
+
+    button.addEventListener('click', () => {
+      const nota1 = parseFloat(prompt('Nota 1: '))
+      const nota2 = parseFloat(prompt('Nota 2: '))
+
+      const media = (nota1 + nota2) / 2
+
+      if (media === 10.0) {
+        alert(`Aluno aprovado com distinção com média 10! Parabéns!`)
+      } else if (media >= 7.0) {
+        alert(`Aluno aprovado com nota: ${media}`)
+      } else if (media < 7.0) {
+        alert(`Aluno reprovado com nota: ${media}`)
+      }
+    })
+  </script>
+</body>
+
+</html>
