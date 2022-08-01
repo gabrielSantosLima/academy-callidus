@@ -1,0 +1,80 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
+#root,
+html,
+body {
+  padding: 0;
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+  background-color: var(--background);
+}
+
+*,
+input,
+textarea {
+  user-select: none;
+}
+
+:root {
+  --primary: #0652dd;
+  --primary-text: #fff;
+  --background: rgb(245, 245, 245);
+  --modal-background: #fff;
+}
+
+#root {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#form {
+  width: 60%;
+  min-height: 70vh;
+  padding: 8px 24px;
+  box-shadow: -1px 0px 10px -1px var(--primary);
+  border-radius: 4px;
+  background-color: var(--modal-background);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+#form .form-label {
+  font-size: 14pt;
+  font-weight: bold;
+  margin-top: 16px;
+}
+
+#form input {
+  background-color: transparent;
+  border: 1px solid var(--primary);
+  padding: 8px;
+  border-radius: 4px;
+}
+
+#form .radio-group,
+#form .checkbox-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+#form .radio-group .radio-container,
+#form .checkbox-group .checkbox-container {
+  display: flex;
+  align-items: center;
+}
+
+#form button {
+  border: 0;
+  margin-top: auto;
+  background-color: var(--primary);
+  color: var(--primary-text);
+  padding: 8px;
+  border-radius: 4px;
+  cursor: pointer;
+}

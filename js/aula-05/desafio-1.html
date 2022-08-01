@@ -10,7 +10,57 @@
 </head>
 
 <body>
+  <div id="root">
+    <form id="form">
+      <h1>Me fale sobre você</h1>
 
+      <label class="form-label">Nome</label>
+      <input type="text" name="nome" placeholder="Digite seu nome..." />
+
+      <label class="form-label">Idade</label>
+      <input type="number" name="idade" placeholder="Digite sua idade..." />
+
+      <label class="form-label">Escolaridade</label>
+      <div class="radio-group">
+        <div class="radio-container">
+          <input type="radio" id="primeiro-grau" name="escolaridade" value="Primeiro grau">
+          <label for="primeiro-grau">Primeiro grau</label>
+        </div>
+        <div class="radio-container">
+          <input type="radio" id="segundo-grau" name="escolaridade" value="Segundo grau">
+          <label for="segundo-grau">Segundo grau</label>
+        </div>
+        <div class="radio-container">
+          <input type="radio" id="terceiro-grau" name="escolaridade" value="Terceiro grau">
+          <label for="terceiro-grau">Terceiro grau</label>
+        </div>
+      </div>
+
+      <label class="form-label">Descolamento</label>
+      <div class="checkbox-group">
+        <div class="checkbox-container">
+          <input type="checkbox" id="transporte-publico" name="deslocamento" value="Transporte Público">
+          <label for="transporte-publico">Transporte Público</label>
+        </div>
+        <div class="checkbox-container">
+          <input type="checkbox" id="transporte-particular" name="deslocamento" value="Transporte Particular">
+          <label for="transporte-particular">Transporte Particular</label>
+        </div>
+        <div class="checkbox-container">
+          <input type="checkbox" id="a-pe" name="deslocamento" value="A pé">
+          <label for="a-pe">A pé</label>
+        </div>
+        <div class="checkbox-container">
+          <input type="checkbox" id="bicicleta" name="deslocamento" value="bicicleta">
+          <label for="bicicleta">Bicicleta</label>
+        </div>
+      </div>
+
+      <button type="submit">ENVIAR</button>
+    </form>
+  </div>
+
+  <script src="./desafio-1.js"></script>
 </body>
 
 </html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Desafio 2</title>
+  <link rel="stylesheet" href="desafio-2.css">
+</head>
+
+<body>
+  <div id="root">
+    <form id="form">
+      <div class="group">
+        <h1>Ficha de Encomenda de Pizzas</h1>
+        <div class="inline-group">
+          <label for="pizza">Qual a pizza a encomendar?</label>
+          <select id="pizza" name="pizza">
+            <option value="Portuguesa" selected>Portuguesa</option>
+            <option value="Calabresa">Calabresa</option>
+            <option value="Marguerita">Marguerita</option>
+          </select>
+          <label for="quantidade-pizza">Quantidade:</label>
+          <input id="quantidade-pizza" type="number" />
+        </div>
+        <div class="inline-group">
+          <label for="bebida">Qual a bebida?</label>
+          <select id="bebida" name="bebida">
+            <option value="Suco de Maracujá" selected>Suco de Maracujá</option>
+            <option value="Guaraná Jesus">Guaraná Jesus</option>
+            <option value="Dolly">Dolly</option>
+          </select>
+          <label for="quantidade-bebida">Quantidade:</label>
+          <input id="quantidade-bebida" type="number" />
+        </div>
+        <div class="inline-group">
+          <input type="checkbox" id="extra-queijo" name="acompanhamentos" value="Extra Queijo">
+          <label for="extra-queijo">Extra Queijo</label>
+          <input type="checkbox" id="massa-grossa" name="acompanhamentos" value="Massa grossa">
+          <label for="massa-grossa">Massa grossa</label>
+          <input type="checkbox" id="pimentos" name="acompanhamentos" value="Pimentos">
+          <label for="pimentos">Pimentos</label>
+          <input type="checkbox" id="cogumelos" name="acompanhamentos" value="Cogumelos">
+          <label for="cogumelos">Cogumelos</label>
+        </div>
+      </div>
+      <div class="group">
+        <h2>Dados para entrega:</h2>
+        <div class="inline-group">
+          <label for="nome">Nome:</label>
+          <input id="nome" name="nome" />
+          <label for="morada">Modara:</label>
+          <input id="morada" name="morada" />
+        </div>
+        <div class="inline-group">
+          <label for="telefone">Telefone:</label>
+          <input id="telefone" name="telefone" placeholder="(DDD) 9XXXX-XXXX" />
+        </div>
+      </div>
+      <div class="group">
+        <h2>Formas de pagamento:</h2>
+        <div class="inline-group">
+          <input type="radio" id="visa" name="pagamentos" value="VISA">
+          <label for="visa">VISA</label>
+          <input type="radio" id="conta-entrega" name="pagamentos" value="Conta Entrega">
+          <label for="conta-entrega">Conta Entrega</label>
+          <input type="radio" id="factura" name="pagamentos" value="Factura">
+          <label for="factura">Factura (30 dias,+15%)</label>
+        </div>
+        <div class="inline-group">
+          <label for="numero-cartao">Número do cartão VISA:</label>
+          <input id="numero-cartao" name="numero-cartao" />
+        </div>
+      </div>
+      <div class="group">
+        <div class="inline-group">
+          <button type="submit">Enviar</button>
+          <button id="clear">Limpar</button>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <script src="./desafio-2.js"></script>
+</body>
+
+</html>
