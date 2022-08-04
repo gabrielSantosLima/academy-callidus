@@ -1,0 +1,28 @@
+/* 2. Nesta folha de estilos, usando o mínimo de declarações possível, declare:
+    a) que todo H1 tenha fonte Tahoma, ou sans-serif, se Tahoma não existir
+    b) que todo o texto do corpo (BODY) do arquivo tenha tamanho 10 pontos
+    c) que todos os H1, H2 e H3 sejam vermelhos
+    d) que os H1 tenham tamanho 24 pontos
+    e) que os H2 tenham tamanho 18 pontos
+    f) que os H3 tenham tamanho 14 pontos 
+*/
+body{
+    font-size: 10pt;
+}
+
+h1, h2, h3{
+    color: #FF0000;
+}
+
+h1{
+    font-family: Tahoma, sans-serif;
+    font-size: 24pt;
+}
+
+h2{
+    font-size: 18pt;
+}
+
+h3{
+    font-size: 14pt;
+}
