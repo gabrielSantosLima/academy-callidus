@@ -6,9 +6,10 @@ Projeto de capacitação e desenvolvimento em software
 
 - 🟢 Metodologia Scrum
 - 🟢 Empreendedorismo Digital
-- 🟡 Modelagem Orientada a Objetos
+- 🟢 Modelagem Orientada a Objetos
+- 🟢 JavaScript
 - 🟡 Inteligência Artificial
-- 🟡 JavaScript
+- 🟡 Modelagem de Banco de Dados
 - 🔴 Visão Computacional
 - 🔴 NodeJS
 - 🔴 ReactJS
