@@ -1,8 +1,8 @@
--- Active: 1660569814330@@127.0.0.1@3306@escola_curso
+-- Active: 1660825809219@@127.0.0.1@3306
 
 -- DROP DATABASE escola_curso;
 
--- CREATE DATABASE escola_curso;
+CREATE DATABASE escola_curso;
 
 USE escola_curso;
 
@@ -65,4 +65,6 @@ INSERT INTO
     cursos(`descricao`, `formato_curso`)
 VALUES ('Aulas de JS', 'ONLINE'), ('Aulas de MOO', 'PRESENCIAL'), ('Aulas de MBD', 'PRESENCIAL');
 
-SELECT * FROM cursos;
+INSERT INTO alunos_cursos(id_aluno, id_curso) VALUES(1,2),(2,3),(2,2),(3,3);
+
+SELECT * FROM alunos_cursos;
