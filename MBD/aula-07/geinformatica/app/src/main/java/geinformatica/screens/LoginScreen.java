@@ -1,11 +1,8 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package geinformatica.screens;
 
 import geinformatica.dao.ConnectionFactory;
-import java.sql.Connection;
+import java.awt.Color;
+import java.sql.*;
 
 /**
  *
@@ -35,15 +32,21 @@ public class LoginScreen extends javax.swing.JFrame {
         passwordLabel = new javax.swing.JLabel();
         passwordField = new javax.swing.JTextField();
         submitButton = new javax.swing.JButton();
+        statusLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMinimumSize(new java.awt.Dimension(314, 170));
-        getContentPane().setLayout(new java.awt.GridLayout(3, 2, 2, 2));
+        setTitle("Tela de Login");
+        setMaximumSize(new java.awt.Dimension(720, 110));
+        setMinimumSize(new java.awt.Dimension(720, 110));
+        setPreferredSize(new java.awt.Dimension(720, 110));
+        getContentPane().setLayout(new java.awt.FlowLayout());
 
         loginLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         loginLabel.setText("Login");
         getContentPane().add(loginLabel);
 
+        loginField.setMinimumSize(new java.awt.Dimension(200, 32));
+        loginField.setPreferredSize(new java.awt.Dimension(200, 32));
         loginField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 loginFieldActionPerformed(evt);
@@ -56,6 +59,8 @@ public class LoginScreen extends javax.swing.JFrame {
         getContentPane().add(passwordLabel);
 
         passwordField.setToolTipText("");
+        passwordField.setMinimumSize(new java.awt.Dimension(200, 32));
+        passwordField.setPreferredSize(new java.awt.Dimension(200, 32));
         passwordField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 passwordFieldActionPerformed(evt);
@@ -64,6 +69,8 @@ public class LoginScreen extends javax.swing.JFrame {
         getContentPane().add(passwordField);
 
         submitButton.setText("Enviar");
+        submitButton.setMinimumSize(new java.awt.Dimension(200, 32));
+        submitButton.setPreferredSize(new java.awt.Dimension(200, 32));
         submitButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 submitButtonMouseClicked(evt);
@@ -76,35 +83,59 @@ public class LoginScreen extends javax.swing.JFrame {
         });
         getContentPane().add(submitButton);
 
+        statusLabel.setText("Status: Desconectado ");
+        getContentPane().add(statusLabel);
+
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void loginFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginFieldActionPerformed
-        // TODO add your handling code here:
     }//GEN-LAST:event_loginFieldActionPerformed
 
     private void passwordFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passwordFieldActionPerformed
-        // TODO add your handling code here:
     }//GEN-LAST:event_passwordFieldActionPerformed
 
     private void submitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitButtonActionPerformed
-        // TODO add your handling code here:
+        onSubmit();
     }//GEN-LAST:event_submitButtonActionPerformed
 
     private void submitButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_submitButtonMouseClicked
-        Connection connection = ConnectionFactory.createConnection();;;
-        String login = loginField.getText();
-        String password = passwordField.getText();
-        System.out.println("Realizando conexão com login "+ login + " e senha "+ password);
-        
-        String query = "SELECT"
     }//GEN-LAST:event_submitButtonMouseClicked
 
+    private void onSubmit(){
+        Connection connection = ConnectionFactory.createConnection();
+        String login = loginField.getText();
+        String password = passwordField.getText();
+        
+        String query = "SELECT NOME FROM USUARIOS WHERE LOGIN LIKE ? AND SENHA LIKE ?";
+        PreparedStatement ps;
+        try {
+            ps = connection.prepareStatement(query);
+            ps.setString(1, login);
+            ps.setString(2, password);
+            ps.execute();
+            ResultSet result = ps.executeQuery();
+            if(result.next()){
+                String nome = result.getString("NOME");
+                statusLabel.setText("Status: "+nome+" conectado.");
+                statusLabel.setForeground(new Color(44, 156, 73));
+            }else{
+                statusLabel.setText("Status: Usuário não Existe");
+                statusLabel.setForeground(Color.RED);
+            }
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+            System.out.println("Não foi possível realizar a query");
+        }
+    }
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField loginField;
     private javax.swing.JLabel loginLabel;
     private javax.swing.JTextField passwordField;
     private javax.swing.JLabel passwordLabel;
+    private javax.swing.JLabel statusLabel;
     private javax.swing.JButton submitButton;
     // End of variables declaration//GEN-END:variables
 }
