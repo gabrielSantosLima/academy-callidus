@@ -8,7 +8,7 @@ Projeto de capacitação e desenvolvimento em software
 - 🟢 Empreendedorismo Digital
 - 🟢 Modelagem Orientada a Objetos
 - 🟢 JavaScript
-- 🟡 Inteligência Artificial
+- 🟢 Inteligência Artificial
 - 🟡 Modelagem de Banco de Dados
 - 🔴 Visão Computacional
 - 🔴 NodeJS
