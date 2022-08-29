@@ -4,14 +4,23 @@ import geinformatica.entities.User;
 import java.text.DateFormat;
 import java.util.Date;
 import java.util.Locale;
+import javax.swing.JOptionPane;
 
 public class HomeScreen extends javax.swing.JFrame {
 
     public HomeScreen(User user) {
         initComponents();
+        verifyIfIsAdmin(user);
         updateDate();
         updateUserGreetings(user);
         setVisible(true);
+    }
+    
+    void verifyIfIsAdmin(User user){
+        if(user.getRole().equals("admin")){
+            reportMenu.setEnabled(true);
+            usersMenuItem.setEnabled(true);
+        }
     }
     
     private void updateUserGreetings(User user){
@@ -119,11 +128,13 @@ public class HomeScreen extends javax.swing.JFrame {
 
         usersMenuItem.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_U, java.awt.event.InputEvent.CTRL_DOWN_MASK));
         usersMenuItem.setText("Usuários");
+        usersMenuItem.setEnabled(false);
         saveMenu.add(usersMenuItem);
 
         menuBar.add(saveMenu);
 
         reportMenu.setText("Relatório");
+        reportMenu.setEnabled(false);
 
         servicesMenuItem.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.CTRL_DOWN_MASK));
         servicesMenuItem.setText("Serviços");
@@ -135,6 +146,11 @@ public class HomeScreen extends javax.swing.JFrame {
 
         aboutMenuItem.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_H, java.awt.event.InputEvent.CTRL_DOWN_MASK));
         aboutMenuItem.setText("Sobre");
+        aboutMenuItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                aboutMenuItemActionPerformed(evt);
+            }
+        });
         helpMenu.add(aboutMenuItem);
 
         menuBar.add(helpMenu);
@@ -166,16 +182,25 @@ public class HomeScreen extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void customersMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_customersMenuItemActionPerformed
     }//GEN-LAST:event_customersMenuItemActionPerformed
 
     private void exitMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitMenuItemActionPerformed
+        int option = JOptionPane.showConfirmDialog(this, "Você realmente deseja sair?", "Deseja sair?", JOptionPane.YES_NO_OPTION);
+        if(option == JOptionPane.YES_OPTION){
+            System.exit(0);
+        }
     }//GEN-LAST:event_exitMenuItemActionPerformed
 
     private void serviceOrderMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_serviceOrderMenuItemActionPerformed
     }//GEN-LAST:event_serviceOrderMenuItemActionPerformed
+
+    private void aboutMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aboutMenuItemActionPerformed
+        new AboutScreen();
+    }//GEN-LAST:event_aboutMenuItemActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -5,7 +5,7 @@ public class ConnectionFactory {
     public static Connection createConnection(){
         Connection connection;
         String driver = "com.mysql.cj.jdbc.Driver";
-        String url = "jdbc:mysql://localhost:3306/ge_informatica";
+        String url = "jdbc:mysql://localhost:3306/ge_informatica?useSSL=false";
         String user = "root";
         String password= "root";
         try{

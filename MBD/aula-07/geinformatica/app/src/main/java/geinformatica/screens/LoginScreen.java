@@ -111,12 +111,15 @@ public class LoginScreen extends javax.swing.JFrame {
                 String login = result.getString("LOGIN");
                 String password = result.getString("SENHA");
                 String phone = result.getString("TELEFONE");
+                String role = result.getString("PERFIL");
                 statusLabel.setText("Status: "+name+" conectado.");
                 statusLabel.setForeground(new Color(44, 156, 73));
                 
-                User user = new User(id, name, login, password, phone);
+                User user = new User(id, name, login, password, phone, role);
                 this.dispose();
-                new HomeScreen(user);
+                if(ConnectionFactory.closeConnection(connection)){
+                    new HomeScreen(user);
+                }
             }else{
                 statusLabel.setText("Status: Usuário não Existe");
                 statusLabel.setForeground(Color.RED);
@@ -124,6 +127,7 @@ public class LoginScreen extends javax.swing.JFrame {
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
             System.out.println("Não foi possível realizar a query");
+            ConnectionFactory.closeConnection(connection);
         }
     }
     
