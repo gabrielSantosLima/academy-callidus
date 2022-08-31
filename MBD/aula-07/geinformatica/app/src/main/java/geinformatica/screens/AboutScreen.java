@@ -15,14 +15,16 @@ public class AboutScreen extends javax.swing.JFrame {
         licenseLabel = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Sobre");
 
         titleLabel.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         titleLabel.setText("SISTEMA DE ORDEM DE SERVIÇO - GE INFORMÁTICAS");
 
+        authorLabel.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
         authorLabel.setText("SISTEMA DESENVOLVIDO POR GABRIEL LIMA");
 
+        licenseLabel.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
         licenseLabel.setText("SOB A LICENÇA GPL");
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/gear.png"))); // NOI18N

@@ -129,6 +129,11 @@ public class HomeScreen extends javax.swing.JFrame {
         usersMenuItem.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_U, java.awt.event.InputEvent.CTRL_DOWN_MASK));
         usersMenuItem.setText("Usuários");
         usersMenuItem.setEnabled(false);
+        usersMenuItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                usersMenuItemActionPerformed(evt);
+            }
+        });
         saveMenu.add(usersMenuItem);
 
         menuBar.add(saveMenu);
@@ -201,6 +206,10 @@ public class HomeScreen extends javax.swing.JFrame {
     private void aboutMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aboutMenuItemActionPerformed
         new AboutScreen();
     }//GEN-LAST:event_aboutMenuItemActionPerformed
+
+    private void usersMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_usersMenuItemActionPerformed
+        this.add(new UserScreen());
+    }//GEN-LAST:event_usersMenuItemActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
