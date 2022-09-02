@@ -9,9 +9,9 @@ Projeto de capacitação e desenvolvimento em software
 - 🟢 Modelagem Orientada a Objetos
 - 🟢 JavaScript
 - 🟢 Inteligência Artificial
-- 🟡 Modelagem de Banco de Dados
+- 🟢 Modelagem de Banco de Dados
+- 🟡 NodeJS
 - 🔴 Visão Computacional
-- 🔴 NodeJS
 - 🔴 ReactJS
 - 🔴 DevOps
 
