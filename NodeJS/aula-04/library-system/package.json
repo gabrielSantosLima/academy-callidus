@@ -1,5 +1,5 @@
 {
-  "name": "atividade-01",
+  "name": "library-system",
   "version": "1.0.0",
   "author": "Gabriel Lima <lima.gabrieldsantos@gmail.com> (https://github.com/gabrielSantosLima/academy-callidus)",
   "scripts": {
@@ -13,10 +13,6 @@
     "express": "^4.18.1"
   },
   "devDependencies": {
-    "eslint-config-standard": "^17.0.0",
-    "eslint-plugin-import": "^2.25.2",
-    "eslint-plugin-n": "^15.0.0",
-    "eslint-plugin-promise": "^6.0.0",
     "nodemon": "^2.0.19"
   }
 }
