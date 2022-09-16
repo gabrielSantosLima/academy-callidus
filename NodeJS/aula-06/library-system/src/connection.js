@@ -1,5 +1,5 @@
 import mongoose from "mongoose"
 
-export async function connect(URL = ""){
+export async function createConnection(URL = ""){
     await mongoose.connect(URL)
 }
