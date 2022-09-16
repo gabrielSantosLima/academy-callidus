@@ -1,3 +1,5 @@
+import * as dotenv from 'dotenv'
+dotenv.config()
 import crypto from "crypto";
 import express from "express";
 import { connect } from "./connection.js";
@@ -5,7 +7,7 @@ import { Book } from "./models/Book.js";
 
 const app = express();
 const port = process.env.port || 3000;
-const dbURL = "mongodb://localhost:3242"
+const dbURL = process.env.DB_URL
 let books = [];
 
 await connect(dbURL)
