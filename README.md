@@ -11,7 +11,7 @@ Projeto de capacitação e desenvolvimento em software
 - 🟢 Inteligência Artificial
 - 🟢 Modelagem de Banco de Dados
 - 🟡 NodeJS
-- 🔴 Visão Computacional
+- 🟡 Visão Computacional
 - 🔴 ReactJS
 - 🔴 DevOps
 
