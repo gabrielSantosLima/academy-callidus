@@ -1,2 +1,3 @@
 # Aula 01
-- Contatos: emmsr2004@gmail.com
+- Introdução de React.js
+- Revisão de assuntos de javascript
