@@ -1,0 +1,55 @@
+html, body, #root{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100%;
+    font-family: sans-serif;
+    box-sizing: border-box;
+}
+
+*{
+    user-select: none;
+}
+
+#root{
+    background-color: #F6F6F6;
+}
+
+.app{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.app .table{
+    background-color: white;
+    border-radius: 4px;
+    overflow-y: auto;
+    height: 300px;
+}
+
+
+.app .table .row:nth-of-type(even) {
+    background-color: #f1f1f1;
+}
+
+.app .table .row td{
+    padding: 8px 8px;
+}
+
+.app .table button{
+    background-color: white;
+    padding: 0;
+    text-transform: uppercase;
+    border: 1px solid black;
+    border-radius: 4px;
+    padding: 16px;
+    transition: background-color .1s;
+    cursor: pointer;
+}
+
+.app .table button:hover{
+    background-color: black;
+    color: white;
+}
