@@ -1,0 +1,99 @@
+html, body, #root{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100%;
+    font-family: sans-serif;
+    box-sizing: border-box;
+}
+
+*{
+    user-select: none;
+}
+
+* ::-webkit-scrollbar {
+    background-color: #f0f0f0;
+    width: 8px;
+}
+  
+* ::-webkit-scrollbar-thumb {
+    border-radius: 8px;
+    background: #c0c0c0;
+}
+
+#root{
+    background-color: #F6F6F6;
+    min-height: 100vh;
+}
+
+.app{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.app .table{
+    background-color: white;
+    border-radius: 4px;
+    overflow-y: auto;
+    width: 60%;
+    max-height: 300px;
+    margin: 16px 0px;
+}
+
+.app .table .row:nth-of-type(even) {
+    background-color: #f1f1f1;
+}
+
+.app .table .row td{
+    padding: 8px 8px;
+}
+
+.app .table button{
+    background-color: black;
+    color: white;
+    border: 1px solid black;
+    padding: 0;
+    text-transform: uppercase;
+    border-radius: 4px;
+    padding: 16px;
+    transition: background-color .1s;
+    cursor: pointer;
+}
+
+.app .table button:hover{
+    background-color: white;
+    color: black;
+}
+
+.app .table .table-header .table-titles .table-ordenation{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.app .table .table-header .table-titles .table-ordenation .arrow{
+    font-size: 15px;
+}
+
+.app .table .table-header tr:first-of-type th{
+    background-color: black;
+    color: white;
+    border-radius: 4px 4px 0px 0px;
+}
+
+.app .table .table-header th{
+    padding: 8px;
+}
+
+.app .table .table-foot tr td{
+    background-color: black;
+    color: white;
+    padding: 16px 8px;
+    border-radius: 0px 0px 4px 4px;
+}
+.app .table .table-foot tr td span{
+    font-weight: bold;
+}
