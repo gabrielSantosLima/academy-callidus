@@ -1,0 +1,112 @@
+html, body, #root{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100%;
+    font-family: sans-serif;
+    box-sizing: border-box;
+}
+
+*{
+    user-select: none;
+}
+
+* ::-webkit-scrollbar {
+    background-color: #f0f0f0;
+    width: 8px;
+}
+
+* ::-webkit-scrollbar-thumb {
+    border-radius: 8px;
+    background: #c0c0c0;
+}
+
+.app h1{
+    font-size: 42pt;
+    font-weight: bolder;
+    color: rgb(57, 26, 82);
+}
+
+#root{
+    background-color: #F6F6F6;
+    min-height: 100vh;
+}
+
+.app{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+}
+
+.app img{
+    width: 200px;
+    height: auto;
+}
+
+.app input{
+    border: 1px solid rgb(57, 26, 82);
+    height: 62px;
+    width: 40%;
+    border-radius: 4px;
+    margin: 32px 0px;
+    padding: 0px 16px; 
+    font-size: 12pt;
+}
+
+.app input::placeholder{
+    font-size: 12pt;
+    color:rgb(57, 26, 82);
+}
+
+.app .cars{
+    display: flex;
+    flex-wrap: wrap;
+    width: 90%;
+    justify-content: center;
+    gap: 16px;
+    margin: 0 auto;
+}
+
+.app .cars .car{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 250px;
+    height: 250px;
+    gap: 8px;
+    border-radius: 4px;
+    box-shadow: 1px 1px 4px 1px #00000011;
+    background-color: white;
+    margin-top: 8px;
+}
+
+.app .cars .car img{
+    width: 100%;
+    object-fit: cover;
+    max-height: 150px;
+}
+
+.app .cars .car button{
+    width: 100%;
+    background-color: red;
+    color: white;
+    font-size: 12pt;
+    border: 0;
+    border-radius: 0 0 4px 4px;
+    padding: 8px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color .2s;
+}
+
+.app .cars .car .car-name{
+    font-weight: bold;
+}
+
+.app .cars .car button:hover{
+    background-color: white;
+    color: red;
+}
