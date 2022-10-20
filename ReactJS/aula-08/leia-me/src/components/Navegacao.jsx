@@ -8,30 +8,30 @@ export const Navegacao = () => {
   return (
     <ul>
         <li>
-          <NavLink to="/" activeStyle={linkCorrente} exact>
+          <NavLink to="/">
             Home
           </NavLink>
         </li>
         <li>
-          <NavLink to="/frontend" activeStyle={linkCorrente} exact>
+          <NavLink to="/frontend">
             FrontEnd
           </NavLink>
         </li>
         <li>
-          <NavLink to="/programacao" activeStyle={linkCorrente} exact>
+          <NavLink to="/programacao">
             Programação
           </NavLink>
         </li>
         <li>
-          <NavLink to="/design" activeStyle={linkCorrente} exact>
+          <NavLink to="/design">
             Design
           </NavLink>
         </li>
-        <li>
-          <NavLink to="/catalogo" activeStyle={linkCorrente} exact>
+        {/* <li>
+          <NavLink to="/catalogo">
             Catálogo
           </NavLink>
-        </li>
+        </li> */}
     </ul>
   )
 }
