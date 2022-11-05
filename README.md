@@ -11,8 +11,8 @@ Projeto de capacitação e desenvolvimento em software
 - 🟢 Inteligência Artificial
 - 🟢 Modelagem de Banco de Dados
 - 🟢 NodeJS
+- 🟢 ReactJS
 - 🟡 Visão Computacional
-- 🟡 ReactJS
 - 🔴 DevOps
 
 > 🟢 Finalizado | 🟡 Em progresso | 🔴 A fazer
