@@ -13,7 +13,7 @@ Projeto de capacitação e desenvolvimento em software
 - 🟢 NodeJS
 - 🟢 Visão Computacional
 - 🟢 ReactJS
-- 🟡 DevOps
+- 🟢 DevOps
 
 > 🟢 Finalizado | 🟡 Em progresso | 🔴 A fazer
 
